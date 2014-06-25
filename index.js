@@ -33,6 +33,7 @@ function generate(options, done) {
     git.getCommits({
       from: options.from, 
       to: options.to,
+      grep: options.grep
     }, function(err, commits) {
       if (err) return done('Failed to read git log.\n'+err);
       writeLog(commits);
